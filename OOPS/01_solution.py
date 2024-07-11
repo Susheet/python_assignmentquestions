@@ -48,6 +48,6 @@ class ElectricCar(Car):
 
 # Encapsulation
 my_tesla = ElectricCar("Tesla", "Model S", "100kWh")
-print(my_tesla.brand) # after making it private by adding two underscores, we can't access it directly: AttributeError: 'ElectricCar' object has no attribute 'brand'
-print(my_tesla.__brand) # Still cannot access it directly: AttributeError: 'ElectricCar' object has no attribute '__brand'
+# print(my_tesla.brand) # after making it private by adding two underscores, we can't access it directly: AttributeError: 'ElectricCar' object has no attribute 'brand'
+# print(my_tesla.__brand) # Still cannot access it directly: AttributeError: 'ElectricCar' object has no attribute '__brand'
 print(my_tesla.get_brand())

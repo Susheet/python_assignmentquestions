@@ -15,9 +15,14 @@
 
 # Encapsulation
 class Car:
+
+    # Class variable
+    total_car = 0
+
     def __init__(self, brand, model):
         self.__brand = brand  # adding two underscores before the variable name makes it private
         self.model = model
+        Car.total_car += 1 # or self.total_car += 1
     
     def get_brand(self):
         return self.__brand + " !"
@@ -27,6 +32,11 @@ class Car:
     
     def fuel_type(self):  # Polymorphism
         return "Petorl or Diesel"
+    
+    # static method
+    @staticmethod
+    def general_description():
+        return "Cars are vehicles that are used for transportation."
     
 
 # Inheritance
@@ -59,7 +69,16 @@ my_tesla = ElectricCar("Tesla", "Model S", "100kWh")
 # print(my_tesla.get_brand())
 
 # Polymorphism
-print(my_tesla.fuel_type())
+# print(my_tesla.fuel_type())
 
-safari = Car("Tata", "Safari")
-print(safari.fuel_type())
+# safari = Car("Tata", "Safari")
+# print(safari.fuel_type())
+
+# Accessing class variable
+# print(Car.total_car) # Always use the class name to access the class variable and not the object name
+
+my_car = Car("Toyota", "Corolla")
+# print(my_car.general_description()) 
+print(Car.general_description()) # We can call the static method using the class name and does not need "self" as an argument in the function definition
+
+

@@ -41,9 +41,13 @@ class ElectricCar(Car):
 # Encapsulation
 my_tesla = ElectricCar("Tesla", "Model S", "100kWh")
 
+# isinstance() is used to check if an object is an instance of a class
+print(isinstance(my_tesla, Car))
+print(isinstance(my_tesla, ElectricCar))
+
 
 my_car = Car("Toyota", "Corolla")
 # my_car.model = "City"
-print(my_car.model) # Adding property decorator makes the attribute read-only in the class, and now we can access it just by model and not model()
+# print(my_car.model) # Adding property decorator makes the attribute read-only in the class, and now we can access it just by model and not model()
 
 
